@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6 => utiliser le mot class pour créer des class 
+
+        class Etudiant{
+           /*  prenom;
+            nom; */
+            constructor(prenom , nom){
+                this.prenom = prenom ;
+                this.nom = nom;
+            }
+
+            description(){
+                console.log(this.prenom + " "+ this.nom) ;
+            }
+        }
+
+        let e = new Etudiant ("John", "DOE");
+        
+        e.description();
+
+        // héritage classique avec le mot clé extends 
+
+        class EtudiantInformatique extends Etudiant {}
+        let f = new EtudiantInformatique("Pierre", "Dupont");
+        f.description();
+
+        // polymorphisme hériter et modifier => super();
+        class EtudiantArtPlastique extends Etudiant {
+            constructor(prenom , nom , age  ){
+                // attention il faut OBLIGATOIREMENT que la fonction super soit la 1ère instruction dans le constructeur 
+                super(prenom , nom );
+                this.age = age; 
+            }
+            information(){
+                console.log("j'ai " + this.age + " ans" );
+            }
+            // surcharge 
+            description(){
+                console.log("méthode surchargée");
+                this.information();
+                super.description(); // exécuter d'abord la fonction description qui est dans la class parente 
+                // pas de problème pour mettre ce super n'importe où dans la méthode 
+            }
+        }
+        let p = new EtudiantArtPlastique ("Béatrice", "Dupont" , 20);
+        p.information();
+        p.description();
+    </script>
+</body>
+</html>
