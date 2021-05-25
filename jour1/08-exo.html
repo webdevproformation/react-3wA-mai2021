@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const etudiant = ["alain", "béatrice" , "charles"];
+
+        // modifier chaque item du tableau => .map()
+        let etudiantMajuscule = etudiant.map( item => item[0].toUpperCase() + item.slice(1).toLowerCase() );
+        console.log(etudiantMajuscule);
+
+        let etudiantFiltre = etudiantMajuscule.filter( function(item){
+            return item !== "Béatrice";
+        });
+        console.log(etudiantFiltre);
+
+        etudiantFiltre.splice(1, 0 , "Benjamin" , "Benoit");
+        console.log(etudiantFiltre);
+
+        let indexCharles = etudiantFiltre.indexOf(  "Charles" );
+        console.log(indexCharles);
+    </script>
+</body>
+</html>
