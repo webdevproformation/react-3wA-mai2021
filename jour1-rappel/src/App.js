@@ -8,6 +8,9 @@ import Sommaire from './jour1/Sommaire';
 import ArticleBlog from './jour1/ArticleBlog';
 import Menu from './jour1/Menu';
 import Formulaire from './jour1/Formulaire';
+import Compteur from './jour1/Compteur';
+
+
 // SASS 
 // import {Article , Liste , Titre } from './jour1';
 function App() {
@@ -18,9 +21,12 @@ function App() {
             Bootstrap est bien installé !!
           </div>
       </header>
-      
       <section className="row">
-        
+        <div className="col">
+          <Compteur />
+        </div>
+      </section>
+      <section className="row">
         <div className="col">
           <Formulaire />
         </div>
