@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- en html partager module-->
+    <script type="module">
+        import {a , Resultat as R  , calcul} from "./12-script.js";
+        import  objet , {soustraction}  from "./12-script-suite.js";
+        console.log(a);
+        let b = new R ; // possible de renommer une class variable  fonction qui est importée mais par contre une fois renommée vous devez utiliser l'alias que vous avez choisi
+        console.log(b);
+        b.uneMethode();
+
+        console.log(objet);
+
+        objet.addition(); // 30
+        //soustraction(); // Erreur ! TypeError: this is undefined
+    </script>
+</body>
+</html>
