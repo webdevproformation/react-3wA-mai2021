@@ -4,6 +4,7 @@ import Bouton from './jour1/Bouton';
 import Titre from './jour1/Titre';
 import Liste from './jour1/Liste';
 import Article from './jour1/Article';
+import Sommaire from './jour1/Sommaire';
 // SASS 
 // import {Article , Liste , Titre } from './jour1';
 function App() {
@@ -27,6 +28,11 @@ function App() {
           <div className="col">
             <Article />
           </div>
+      </section>
+      <section  className="row">
+      <div className="col">
+        <Sommaire />
+      </div>
       </section>
     </div>
   );
