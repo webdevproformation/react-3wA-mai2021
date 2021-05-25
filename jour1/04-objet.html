@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let voiture = { // objet litéral // membre
+            marque : "Peugeot", // propriété
+            rouler : function(){ // méthode = stocker dans une propriété une fonction 
+                console.log("je roule !");
+            },
+            stopper (){ // autre manière d'érire une méthode (ES6)
+                console.log("je suis stoppé !");
+            }
+        };
+        // utiliser les valeurs / fonctions stockées dans cet objet
+
+        console.log(voiture.marque); // propriété
+
+        // méthode 2 manières d'exécuter les méthodes 
+
+        voiture.rouler(); // classique
+        voiture["stopper"](); // exécuter une méthode d'un objet littéral comme un tableau 
+
+        let action = "rouler"; // formulaire dans React
+        voiture[action](); 
+
+    </script>
+</body>
+</html>
