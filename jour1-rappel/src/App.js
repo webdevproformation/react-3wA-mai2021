@@ -6,7 +6,7 @@ import Liste from './jour1/Liste';
 import Article from './jour1/Article';
 import Sommaire from './jour1/Sommaire';
 import ArticleBlog from './jour1/ArticleBlog';
-
+import Menu from './jour1/Menu';
 // SASS 
 // import {Article , Liste , Titre } from './jour1';
 function App() {
@@ -17,6 +17,15 @@ function App() {
             Bootstrap est bien installé !!
           </div>
       </header>
+      
+      <section className="row">
+        
+        <div className="col">
+          <Menu />
+        </div>
+       
+      </section>
+      
       <section  className="row">
           <div className="col">
             <Bouton />
