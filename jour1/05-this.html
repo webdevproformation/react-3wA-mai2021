@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // this => correspond contexte d'exécution : Qu'est ce qui exécuter 
+        // contrairement à la programmation orientée objet classique PHP / Java par exemple 
+        // en javascript this peut être utilisé hors d'une class 
+
+        console.log(this); // window
+        function a(){
+            console.log(this);
+        }
+        window.a(); // window
+        let arbre = {
+            taille : function(){
+                console.log(this);
+            }, 
+            origine(){
+                console.log(this);
+            }
+        };
+        arbre.taille(); // objet arbre 
+        arbre["origine"]();  // objet arbre 
+
+        let maison = {
+            description : "75 rue du Paradis 75010 Paris",
+            habiter : function(){
+                console.log("j'habite au " + this.description)
+            }
+        }
+        maison.habiter(); // j'habite au 75 rue du Paradis 75010 Paris
+        
+        console.log("utilisation de bind");
+        let information = maison.habiter.bind(maison) ; // action / event 
+                                                        // pour éviter de perdre le contexte d'exécution de this 
+        /* window. */information(); // j'habite au undefined
+        
+    </script>
+</body>
+</html>
