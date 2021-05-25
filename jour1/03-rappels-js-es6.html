@@ -8,8 +8,28 @@
 </head>
 <body>
     <script>
-        
+        // rappels en javascript version es6 
 
+        // créer des variables => let / const 
+        // ne plus utiliser le mot clé var 
+        var a = 1 ;
+        var a = "hello"; // attention aucune erreur déclenchée 
+        function a(){} // attention aucune erreur déclenchée 
+        let b = "hello";
+        // let b = 12 ; // Uncaught SyntaxError: redeclaration of let b
+        // function b(){} // Uncaught SyntaxError: redeclaration of let b
+        // scope : portée des variables est vérifié par le langage javascript 
+        // pour certain mot clé de javascript problème de portée de variable déborde
+        // if for while
+        for(let i = 0 ; i < 20 ; i++){
+            var resultat =   "le résultat est " ;
+        }
+        console.log(resultat); // la variable resultat déborde de la boucle for 
+
+        for(let i = 0 ; i < 20 ; i++){
+            let resultat2 =   "le résultat est " ;
+        }
+        console.log(resultat2); // Uncaught ReferenceError: resultat2 is not defined
     </script>
 </body>
 </html>
