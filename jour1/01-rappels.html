@@ -1,0 +1,80 @@
+React / React JS / React.js 
+
+librairie créée par Facebook en 2011 
+librairie qui permet de créer des interfaces graphiques = UI 
+
+chaque élément de l'UI est découpée en Composant / Component 
+
+App/ => composant RACINE => arbre 
+    Entête 
+        Logo
+        menu
+    Main 
+        articles
+    Footer
+        formulaire
+
+=> 6 Composants 
+
+---------------------------
+
+voici un exemple de composant 
+
+import { Component } from "react";
+
+class NavBar extends Component {
+  state = {};
+  render(){}
+}
+
+class hérite de la class Composant qui est stockée dans un dossier dans node_modules 
+
+cette class va avoir deux membres de la class :
+    propriété : state : permet de stocker des valeurs propres au composant 
+    méthode render : va être en charge de gérer ce qui est affiché à l'écran
+
+Méthode classique pour créer une composant 
+
+function Navbar(){
+    return ;
+}
+
+const Navbar = () => {
+
+}
+
+//-------------------- 
+
+Angular ou React => deux outils qui permettent de créer des interfaces graphiques 
+
+Angular => framework => une fois que vous avez télécharger les fichiers vous n'avez plus besoin d'ajouter des éléments complémentaires 
+framework = librairie très très complète 
+
+React => librairie => télécharger plein de fichiers qui vont vous permet de réaliser des interface graphiques, mais il va falloir télécharger des fichiers en + pour gérer des aspects complémentaires 
+GEstion des route / appeler des api ... 
+
+=> React est plus léger que Angular 
+
+// ------------------ 
+
+installer nodejs 
+
+// ------- 
+
+create-react-app outil en ligne de commande qui permet de créer un projet React 
+
+npm i -g create-react-app
+
+create-react-app --version
+
+---------------------- 
+
+Visual Studio Code :
+
+snippet : 
+raccourcis cc ENter 
+class ou une fonction avec la syntaxe attendue par React 
+Simple React Snippets
+
+
+
