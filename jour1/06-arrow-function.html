@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // créer une fonction en javascript 3 manières
+
+        // super classique 
+        function a(){ };
+
+        // classique 
+        const b = function(){ };
+
+        // arrow function = fonction fléchée ES6 
+
+        const c = () => { }
+
+        // si vous avez aucun paramètre dans les parenthèses => laisser les ( )
+        
+        const calcul = () => { 
+            console.log(1+2);
+        }
+        calcul(); // 3
+
+        // si vous avez 1 paramètre dans une fonction fléchée => les parenthèses sont facultatives 
+
+        const multiplication = param => { 
+            console.log (param * 2);
+        }
+        multiplication(10); // 20
+        
+        // si vous avez plus que 1 paramètre, les parenthèses reviennent OBLIGATOIRES
+
+        const soustraction = (param1, param2) => {
+            console.log( param1 - param2 );
+        }
+        soustraction(10 , 2); // 8
+        
+        // le mot clé return et les accolades 
+
+        const addition = (a, b) => {
+            return a + b ; // 1 seule instruction dans les accolades ET cette instruction fait un return 
+        }
+        const addition2 = (a, b) => a + b ; 
+        // vous pouvez enlever { } et le mot clé return 
+
+        let r = addition2(2, 3);
+        console.log(r); // 5 
+
+        // erreur classique c'est de laisser les accolades et de retirer le return 
+        let aire = (largeur, hauteur) => {
+           return largeur * hauteur; 
+        }
+
+        //let aire = (largeur, hauteur) => largeur * hauteur; 
+        let r2 = aire(10, 2);
+        console.log(r2); // undefined
+
+        // attention cette syntaxe compacte ne fonctionne QUE si vous avez 1 seule instruction qui return 
+        let description = () => {
+            const texte = "bonjour";
+            return texte + " les amis";
+        }
+
+        // this ne fonctionne de la même manière dans une fonction classique => function et dans le cas d'une fonction fléchée 
+
+        let person = {
+            prenom : "Alain",
+            bonjour : function(){
+                console.log(this.prenom + " dit bonjour");
+            },
+            hello() {
+                let self = this ;
+                return () => console.log(self.prenom + " dit hello");
+            }
+        }
+        person.bonjour();
+        person.hello()();
+    </script>
+</body>
+</html>
