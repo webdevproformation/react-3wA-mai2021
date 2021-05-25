@@ -7,6 +7,7 @@ import Article from './jour1/Article';
 import Sommaire from './jour1/Sommaire';
 import ArticleBlog from './jour1/ArticleBlog';
 import Menu from './jour1/Menu';
+import Formulaire from './jour1/Formulaire';
 // SASS 
 // import {Article , Liste , Titre } from './jour1';
 function App() {
@@ -18,6 +19,13 @@ function App() {
           </div>
       </header>
       
+      <section className="row">
+        
+        <div className="col">
+          <Formulaire />
+        </div>
+       
+      </section>
       <section className="row">
         
         <div className="col">

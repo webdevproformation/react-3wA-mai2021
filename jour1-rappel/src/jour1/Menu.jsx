@@ -1,6 +1,6 @@
 import { useState } from 'react';
 const Menu = () => {
-   let [titre] =  useState("Mon Super Site");
+   let [titre] = useState("Mon Super Site");
    let [items] = useState(["Accueil", "Présentation", "Nous Contacter"]);
    let [annee] = useState((new Date()).getFullYear());
    return (
