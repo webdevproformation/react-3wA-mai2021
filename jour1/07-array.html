@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let jours = ["lundi", "mardi", "mercredi" ]; // objet de type tableau
+
+        // modifier un tableau 
+        // modifier chaque item du tableau / enrichir chaque item du tableau
+        // ["<li>lundi</li>", "<li>mardi</li>", "<li>mercredi</li>" ]
+        
+        let jourHtml = jours.map(function(item){ 
+            return "<li>" + item + "</li>";
+        });
+        // réaliser des boucles dans les fonctions de render de React
+        console.log(jourHtml);
+
+        let jourHtml2 = jours.map( item => "<li>" + item + "</li>" );
+        console.log( jourHtml2 );
+
+        // .filter()
+        // .splice()
+        // .reduce()
+        // je veux enlever le mot mardi du tableau 
+
+        let joursFiltre = jours.filter( function( item ){ 
+            return item == "mardi" || item == "mercredi";
+         } );
+
+         console.log( joursFiltre );
+
+        // let joursFiltre = jours.filter(  item =>  item != "mardi" );
+
+        // .splice() permet d'ajouter un item n'importe où dans le tableau 
+        //           permet de supprimer un item n'importe où dans le tableau 
+
+        // supprimer l'item qui contient le mot mardi 
+
+         // ["lundi", "mardi", "mercredi" ]; => mardi est situé à la position 1 dans tableau
+
+         jours.splice(1,2); // suppression
+         // 1 index
+         // 1 permettre de dire le nombre d'élément que l'on veut supprimer ici 1 seul
+         console.log(jours);
+
+         // ajouter après lundi => jeudi et vendredi
+
+         jours.splice( 1, 0 , "jeudi", "vendredi");
+         // 1 où ?? index 1
+         // 0 => ne rien supprimer
+         // les valeurs à ajouter "jeudi", "vendredi"
+
+         console.log(jours);
+
+         let budget = [ 10 , 20, 30 , 40 ];
+
+         // faire la somme de tous les items dans le tableau  => 100 
+         let total = 0;
+         for(let i = 0 ; i < budget.length ; i++){
+            total += budget[i];
+         }
+         console.log(total);
+
+         // autre manière de faire la même chose reduce
+
+         let resultat = budget.reduce( function( item , total ){ 
+             return total +=  item ;
+         } );
+         console.log(resultat);
+
+         let resultat2 = budget.reduce( ( item , total ) =>  total +=  item ); 
+
+         console.log(resultat2);
+
+         // .find()
+         // .indexOf()
+         // .includes() ...
+    </script>
+</body>
+</html>
+<!-- 
+    créer un fichier 08-exo.html 
+
+    créer un tableau etudiant = "alain", béatrice , charles 
+
+    1 transformer ce tableau  "Alain",Béatrice , Charles
+    2 supprimer Béatrice 
+    3 ajouter après Alain l'item Benjamin et Benoit
+    4 déterminer l'index de l'item qui contient la string Charles 
+-->
