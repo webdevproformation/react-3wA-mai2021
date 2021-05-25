@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let formation = {
+            duree : 5,
+            nom : "React",
+            description : function(){
+                console.log("je suis une formation de " + this.duree + " jours sur " + this.nom);
+            }
+        };
+
+        formation.description();
+        // utilisation de la descructuration 
+        console.log("descructuration");
+        let { description } = formation; // extraire la méthode qui est stockée dans l'objet
+        let d = description.bind(formation)
+        d();
+
+        let { duree , nom } = formation; // objet
+        console.log(duree, nom);
+
+        let etudiant = ["Alain","Pierre"];
+
+        let [etudiant1 , etudiant2] = etudiant ; // tableau 
+        console.log(etudiant1 , etudiant2)
+
+        function calcul ( objet ){
+            console.log(objet.x + objet.y)
+        }
+
+        calcul ({ x : 2 , y : 3 }); // 5 
+
+        function calcul2 ( { x, y } ){ // utilisation de la descructuration  directement comme paramètre d'une fonction  
+            console.log(x + y);
+        };
+        calcul2 ({ x : 4 , y : 5 }); 
+
+        // ... => très pratique 
+        // addition deux tableaux / concaténer deux tableaux 
+
+        let formation1 = [2, 3];
+        let formation2 = ["jours", "minutes"];
+        let formation3 = [...formation1, ...formation2];
+        console.log(formation3);
+
+        // ... cloner un tableau ou un objet 
+
+        let formation4 = [...formation1] ; // copie par référence 
+                                     // pour éviter la copie par référence shalow copie
+
+        formation4.push( 5 ) ; // ajout à la fin 
+        console.log("formation4",formation4); // [ 2, 3, 5 ]
+        console.log("formation1",formation1); // [2, 3]
+
+        let objet = {
+            a : 1,
+            b : [ 1,2,3 ],
+            c : { 
+                prenom : "Alain",
+                notes : [1,2,3]
+            }
+        };
+
+        let objet2 = { ...objet }; // clone pour éviter la copie par référence 
+
+        objet2.a = 10;
+        console.log(objet); 
+        console.log(objet2);
+
+    </script>
+</body>
+</html>
