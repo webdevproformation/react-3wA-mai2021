@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Formation{
+            constructor(duree , nom){
+                this.duree = duree;
+                this.nom = nom ;
+            }
+        }
+        class React extends Formation{
+            constructor(duree , nom , organisme){
+                super(duree , nom); // la fonction super() doit OBLIGATOIREMENT être en 1ère position
+                this.organisme = organisme ;
+            }
+            description(){
+                console.log( `je suis une formation de ${this.duree} jours au sein de ${this.organisme}` );
+            }
+        }
+        let r = new React(5, "javascript" , "3WAcademy" );
+
+        r.description();
+
+    </script>
+</body>
+</html>
