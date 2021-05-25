@@ -5,6 +5,8 @@ import Titre from './jour1/Titre';
 import Liste from './jour1/Liste';
 import Article from './jour1/Article';
 import Sommaire from './jour1/Sommaire';
+import ArticleBlog from './jour1/ArticleBlog';
+
 // SASS 
 // import {Article , Liste , Titre } from './jour1';
 function App() {
@@ -30,9 +32,12 @@ function App() {
           </div>
       </section>
       <section  className="row">
-      <div className="col">
-        <Sommaire />
-      </div>
+        <div className="col">
+          <Sommaire />
+        </div>
+        <div className="col">
+          <ArticleBlog />
+        </div>
       </section>
     </div>
   );
