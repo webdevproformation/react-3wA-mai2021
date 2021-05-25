@@ -13,12 +13,12 @@ class ArticleBlog extends React.Component {
         let {titre , contenu , like} = this.state;
         // utilisation de la destructuration de l'objet this.state
         return ( 
-        <article class="card">
-            <header class="card-header">
+        <article className="card">
+            <header className="card-header">
                 <h2>{titre}</h2>
             </header>
-            <p class="card-body">{contenu}</p>
-            <footer class="card-footer">
+            <p className="card-body">{contenu}</p>
+            <footer className="card-footer">
                 <p className="fs-4">facebook {like.fb} instagram {like.instagram} </p>   
             </footer>
         </article> 

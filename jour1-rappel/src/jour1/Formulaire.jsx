@@ -6,14 +6,14 @@ const Formulaire = () => {
 
     return (
     <form action="">
-    <label for="">{etiquettes[0]}</label>
-    <input type="text" class="form-control" />
-    <label for="">{etiquettes[1]}</label>
-    <input type="text" class="form-control" />
-    <label for="">{etiquettes[2]}</label>
-    <input type="number" class="form-control" />
-    <label for="">pays</label>
-    <select name="" id="" class="form-select">
+    <label htmlFor="">{etiquettes[0]}</label>
+    <input type="text" className="form-control" />
+    <label htmlFor="">{etiquettes[1]}</label>
+    <input type="text" className="form-control" />
+    <label htmlFor="">{etiquettes[2]}</label>
+    <input type="number" className="form-control" />
+    <label htmlFor="">pays</label>
+    <select name="" id="" className="form-select">
         <option value="">Choisir un pays</option>
         <option value={pays[0]}>{pays[0]}</option>
         <option value={pays[1]}>{pays[1]}</option>
