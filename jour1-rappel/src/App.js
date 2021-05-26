@@ -10,8 +10,10 @@ import NavBar from './jour2/NavBar';
 import Footer from "./jour2/Footer";
 import CGV from "./jour2/Cgv";
 import MentionLegale from "./jour2/Mention-legale";
+import NotFound from './jour2/Not-found';
 
-import { Route , Switch } from "react-router-dom";
+import { Route , Switch , Redirect } from "react-router-dom";
+
 
 function App() {
   return (
@@ -28,8 +30,10 @@ function App() {
               <Route path="/produits" component={Produits}/>
               <Route path="/nous-contacter" component={Contact}/>
               <Route path="/mention" component={MentionLegale}/>
+              <Route path="/not-found" component={NotFound}/>
               <Route path="/cgv" component={CGV}/>
-              <Route path="/" component={Home} />
+              <Route path="/" exact component={Home} />
+              <Redirect to="/not-found" />
             </Switch>
           </div>
         </main>

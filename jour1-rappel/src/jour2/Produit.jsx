@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 
 class Produit extends Component {
     state = {  }
+
+    // cdm 
+    componentDidMount() {
+        const { id } = this.props.match.params;
+        const listeProduit = [1,2,3,4,5];
+        if( ! listeProduit.includes(parseInt(id))){
+            // redirection vers la page 404 
+            this.props.history.push("/not-found");
+        } 
+    }
+
     render() { 
         const { id } = this.props.match.params ; /** récupération de id dans l'url */
         return ( <div className="col">
