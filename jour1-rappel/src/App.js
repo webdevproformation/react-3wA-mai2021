@@ -10,6 +10,8 @@ import Menu from './jour1/Menu';
 import Formulaire from './jour1/Formulaire';
 import Compteur from './jour1/Compteur';
 import Info from './jour1/Info';
+import Social from './jour2/Social';
+
 
 
 // SASS 
@@ -17,6 +19,11 @@ import Info from './jour1/Info';
 function App() {
   return (
     <div className="container">
+      <div className="row">
+        <div className="col py-3">
+          <Social />
+        </div>
+      </div>
       <header className="row">
           <div className="alert alert-success">
             Bootstrap est bien installé !!
