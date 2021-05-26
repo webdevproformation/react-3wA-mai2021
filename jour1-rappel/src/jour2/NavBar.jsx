@@ -33,6 +33,15 @@ class NavBar extends Component {
                                     Contacter nous</NavLink>
                     </li>
                 </ul>
+                <ul className="navbar-nav ms-auto">
+                    <li className="nav-item">
+                    <NavLink 
+                            to="/login" 
+                            className="nav-link"
+                            activeClassName="active">
+                                Connexion</NavLink>
+                    </li>
+                </ul>
             </nav>
         );
     }
