@@ -1,16 +1,17 @@
 // import logo from './logo.svg';
 import './App.css';
 
-import Compteur from './jour2/Compteur';
+
+import NavBar from './jour2/NavBar';
 
 function App() {
   return (
     <div className="container">
-        <section className="row">
+        <header className="row">
           <div className="col">
-            <Compteur />
+            <NavBar />
           </div>
-        </section>
+        </header>  
     </div>
   );
 }

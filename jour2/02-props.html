@@ -1,0 +1,41 @@
+comment faire communiquer des composants les uns avec les autres 
+
+Composant Parent => App 
+    car c'est le composant App qui import les composants enfants
+Composants Enfants => Compteur / Element / Social / Titre 
+
+il est possible d'envoyer des informations qui sont stockées dans le state depuis App => Compteur 
+
+state : {
+    compteurs : [ 
+        {id : 1 , nombre : 2},
+        {id : 2 , nombre : 2},
+        {id : 3 , nombre : 2},
+    ]
+}
+
+1 seule page => mettre en place plusieurs pages dans mon application react 
+
+par défaut React 
+cd jour1-rappel/
+yarn add react-router-dom
+
+https://reactrouter.com/
+
+
+plusieurs composants 
+adresse url => Composant 
+Accueil
+Liste d'articles 
+1 seul article 
+page de contact 
+
+NavBar 
+Home localhost:3000/ 
+Contact localhost:3000/nous-contacter
+Produits  localhost:3000/produits
+Produit   localhost:3000/produits/1
+
+react Router Dom récupérer l'url => choisir le composant concerné 
+
+src/index.js 

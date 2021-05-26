@@ -7,12 +7,12 @@ import {useState} from 'react' ;
 
 function Compteur() {
    let [valeurInitiale , setValeur ] =  useState(() => { 
-        console.log("plein de traitement");
+        //console.log("plein de traitement");
         return 8; // fonction anonyme qui ne sera exécuté 1 seule fois (au chargement du composant)
     } 
    );
     //if(true){ // erreur React Hook "useState" is called conditionally.
-        let [couleur, setCouleur] =  useState("#000");
+        //let [couleur, setCouleur] =  useState("#000");
     //}
    /*  useState();
     useState();
