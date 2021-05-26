@@ -19,7 +19,7 @@ class Contact extends Component {
             erreurs.email = "le champ email n'est pas conforme";
         }
         if( cloneDemande.commentaire.length < 5 ){
-            erreurs.nom = "le champ commentaire doit avoir au moins 5 caractères";
+            erreurs.commentaire = "le champ commentaire doit avoir au moins 5 caractères";
         }
         // si variable erreurs est objet vide => true 
         // sinon erreurs => récupérer les informations et les afficher à l'écran 
@@ -27,11 +27,26 @@ class Contact extends Component {
         //    return true;
         //}
         // return erreurs ;
-        return Object.keys(erreurs).length ==  0  ? true : erreurs ;
+        // @hapi/joi yarn add @hapi/joi
+        return Object.keys(erreurs).length === 0  ? {} : erreurs ;
     }
 
     submit = e => {
         e.preventDefault();
+        const verif = this.validation();
+        if( Object.keys(verif).length !== 0 ){
+            this.setState({
+                errors : verif
+            })
+        } else {
+            this.setState({
+                errors : {}
+            })
+        }
+        // Object.values() // permet de transformer un objet = { id : 1, titre : "bonjour" }
+        // Object.values(objet) => [1, "bonjour"]
+        // Object.keys(objet) => ["id", "titre"]
+        console.log(Object.values(this.state.errors))
 
     }
     change = e => {
@@ -42,6 +57,19 @@ class Contact extends Component {
         this.setState({
             demande : cloneDemande
         });
+    }
+
+    messageAlert = () => {
+        if(Object.keys(this.state.errors).length > 0){
+            return (<div className="alert alert-danger pb-0">
+                <ul>
+                    {Object.values(this.state.errors).map( (message, index) => { 
+                        return <li key={index}>{message}</li>
+                    })}
+                </ul>
+            </div>)
+        }
+
     }
 
     render() { 
@@ -86,6 +114,7 @@ class Contact extends Component {
                         <input type="submit" className="btn btn-outline-dark btn-lg my-4" />
                     </div>
                 </form>
+                { this.messageAlert() }
             </div>
          );
     }
