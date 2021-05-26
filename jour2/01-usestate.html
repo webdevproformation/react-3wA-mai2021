@@ -1,0 +1,20 @@
+import {useState} from 'react'
+
+function Compteur {
+   let [valeurInitiale , setValeur ] =  useState(4);
+   // la fonction qui va permettre de modifier le state 
+   // exactement la même chose this.setState() => quand on est dans une class 
+   // nommer comme on veut => cette fonction que l'on va utiliser pour modifier
+
+   function augmenter(){
+    setValeur(valeurInitiale + 1);
+   }
+    
+   return (
+        <>
+            <button onClick={augmenter}>augmenter</button>
+            <span>{valeurInitiale}</span>
+        </>
+
+   )
+}
