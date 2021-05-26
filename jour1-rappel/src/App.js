@@ -24,6 +24,7 @@ function App() {
         <main className="row">
           <div className="col">
             <Switch>
+              <Route path="/produits/:id" component={Produit}/>
               <Route path="/produits" component={Produits}/>
               <Route path="/nous-contacter" component={Contact}/>
               <Route path="/mention" component={MentionLegale}/>
