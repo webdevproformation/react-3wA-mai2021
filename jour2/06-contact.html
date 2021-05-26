@@ -1,0 +1,37 @@
+dans le composant Contact 
+
+insérer dans la vue un formulaire 
+
+3 champs 
+    nom  input de type texte 
+    email input de type email 
+    commentaire textarea 
+1 bouton
+    input de type submit 
+
+utiliser bootstrap pour le styliser 
+récupérer les différentes informations saisies dans le formulaire
+pour remplir le state suivant :
+
+state = {
+    demande : {
+        nom : "",
+        email : "",
+        commentaire : ""
+    }
+}
+
+extension permet de connaitre pour chaque composant le contenu de ses props // son state 
+
+React DevTool => https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation
+
+une fois que l'on récupère les informations saisies => vérifier que toutes les informations sont conformes =>
+
+email soit un email
+nom doit contenu au minimum 5 caractères et maximum 50 caractères 
+
+@hapi/joi => outil que l'on va installer et qui permet de réaliser des vérifications avancées simplement !!
+
+la vérification => 
+
+dans le state => une nouvelle propriété errors 
