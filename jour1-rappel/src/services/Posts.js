@@ -22,8 +22,16 @@ export async function create(album){
 }
 
 // update
+export async function update(album){
+    let reponse = await axios.put(`${urlApiPhoto}/${album.id}` , {nom : "album modifié"});
+    console.log( reponse );
+}
 
-// delete 
+// delete
+export async function suppr(id){
+    let reponse = await axios.delete(`${urlApiPhoto}/${id}`);
+    console.log( reponse );
+} 
 
 // rdv dans 16h25 bon café / pas questions 
 
