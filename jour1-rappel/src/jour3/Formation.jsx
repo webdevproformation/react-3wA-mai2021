@@ -6,15 +6,15 @@ class Formation extends Component {
         nom : "",
         duree : "",
         unite : "",
-        url : ""/* ,
-        email : "" */
+        url : "" ,
+        email : "blabla" 
     }
    schemaFormation = Joi.object({
         nom : Joi.string().min(3).max(20),
         duree : Joi.number().integer().greater(0) ,
-        unite : Joi.any().allow("jour" , "mois" , "annee" , "heure"),
-        url : Joi.string().uri()/*  , 
-        email : Joi.string().email() , */
+        unite : Joi.string().valid("jour" , "mois" , "annee" , "heure"),
+        url : Joi.string().uri()  , 
+        email : Joi.string().email({ tlds: { allow: false } }) ,
     }) 
 
     render() { 

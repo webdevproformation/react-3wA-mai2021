@@ -1,7 +1,7 @@
 import { Component } from 'react';
 /* import Condition from '../jour3/Condition';
-import Validation from '../jour3/Validation';
-import Formation from '../jour3/Formation'; */
+import Validation from '../jour3/Validation';*/
+import Formation from '../jour3/Formation'; 
 import axios from "axios" ; 
 
 
@@ -24,6 +24,7 @@ class Home extends Component {
     }// rdv 14h10 bon appétit !!!!!!!!!!!!!!!
     render() { 
         return ( <>
+            <Formation />
             <ol>
                 {this.state.articles.map((article , index) =><li key={index}>{article.title}</li>)}
             </ol>
