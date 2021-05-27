@@ -1,0 +1,33 @@
+l'url 
+
+formulaire 
+
+=> OBLIGATOIREMENT vérifier et filtrer ce qui est saisit dans ces zones 
+
+=> injection 
+=> formulaire contact => une fois que c'est rempli => afficher à la suite du formulaire 
+
+<img src="" alt=""> => exécuter voyez une image apparaitre en dessous de votre formulaire => injection
+
+<img src="http://virus.js" alt="" style="display:none">
+
+OBLIGATOIREMENT bien vérifier et filtrer les informations 
+
+ça allourdit beaucoup le code 
+
+if( && || ){
+}
+
+@hapi/joi = https://hapi.dev/tutorials/validation/?lang=en_US
+
+effectuer des validations => 
+
+{ 
+    demande : {
+        nom : "",  // string min 3 maximum 50 obligatoire 
+        email : "", // email => regex
+        commentaire : "" // string min 3 maximum 50 obligatoire refuser " < >
+    }
+}
+
+yarn add @hapi/joi
