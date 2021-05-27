@@ -11,6 +11,8 @@ class Home extends Component {
     }
     componentDidMount = async () => {
         let {data} = await axios.get("https://jsonplaceholder.typicode.com/posts"); // JSON
+        //let info = axios.get("https://jsonplaceholder.typicode.com/posts"); // JSON
+        // console.log(info) // return new Promise
         // demande => recevez l'information => latence lié au réseau 
         // mettre un délai 0.5s 1s 4s 
         // ATTEND la réponse avant de passer à la suite de l'exécution => programmation Asynchrone 
