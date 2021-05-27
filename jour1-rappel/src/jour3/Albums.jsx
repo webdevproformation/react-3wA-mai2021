@@ -12,6 +12,7 @@ class Albums extends Component {
        let top100Albums = data.filter( (album) => { return parseInt(album.id) <= 100 } );
        this.setState({ albums : top100Albums });
     }
+
     modif = async(album) => {
         //console.log(album)
         await update( album );
@@ -19,6 +20,12 @@ class Albums extends Component {
     suppr = async (id) => {
         console.log(id);
         await suppr( id );
+        const cloneAlbum = [...this.state.albums];
+        /* console.log(cloneAlbum) */
+        this.setState({
+            albums :  cloneAlbum.filter( (item) => { return item.id !== id  })
+        }) 
+        
     }
     render() { 
         return ( <>
