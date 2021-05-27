@@ -32,6 +32,13 @@ class NavBar extends Component {
                                 activeClassName="active">
                                     Contacter nous</NavLink>
                     </li>
+                    <li className="nav-item">
+                            <NavLink 
+                                to="/albums" 
+                                className="nav-link"
+                                activeClassName="active">
+                                    Albums</NavLink>
+                    </li>
                 </ul>
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
