@@ -15,7 +15,7 @@ class Validation extends Component {
     });
 
     render() { 
-        let verif = this.schemaEtudiant.validate(this.state.etudiant);
+        let verif = this.schemaEtudiant.validate(this.state.etudiant, {abortEarly: false} );
         console.log(verif);
         return ( <p>test</p> );
     }

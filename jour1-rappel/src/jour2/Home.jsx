@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Condition from '../jour3/Condition';
 import Validation from '../jour3/Validation';
+import Formation from '../jour3/Formation';
 
 
 class Home extends Component {
@@ -10,6 +11,7 @@ class Home extends Component {
             <p>je suis le composant Home</p>
             <Condition />
             <Validation />
+            <Formation />
         </> );
     }
 }
