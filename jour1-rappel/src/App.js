@@ -14,8 +14,7 @@ import Connexion from './jour2/Connexion';
 import NotFound from './jour2/Not-found';
 import {Article} from './jour3/Article';
 import Albums from './jour3/Albums';
-
-
+import Album from './jour3/Album';
 
 
 import { Route , Switch , Redirect } from "react-router-dom";
@@ -32,6 +31,7 @@ function App() {
         <main className="row">
           <div className="col">
             <Switch>
+              <Route path="/albums/:id" component={Album}/>
               <Route path="/albums" component={Albums}/>
               <Route path="/produits/:id" component={Produit}/>
               <Route path="/produits" component={Produits}/>

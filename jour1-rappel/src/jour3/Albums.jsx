@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { getAll } from "../services/Posts";
+import { Link } from 'react-router-dom';
 
 class Albums extends Component {
     state = { 
@@ -14,7 +15,9 @@ class Albums extends Component {
         return ( <div className="row">
             { this.state.albums.map( function (album, index){
                 return (<div className="col-2" key={index}>
-                <img src={album.thumbnailUrl} alt="" className="img-thumbnail" />
+                    <Link to={`/albums/${album.id}`}>
+                        <img src={album.thumbnailUrl} alt="" className="img-thumbnail" />
+                    </Link>
             </div>)
             } )}
         </div> );
