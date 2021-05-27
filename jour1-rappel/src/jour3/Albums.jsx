@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { getAll } from "../services/Posts";
 import { Link } from 'react-router-dom';
+import AlbumCreate from './AlbumCreate';
 
 class Albums extends Component {
     state = { 
@@ -12,7 +13,9 @@ class Albums extends Component {
        this.setState({ albums : top100Albums });
     }
     render() { 
-        return ( <div className="row">
+        return ( <>
+            <AlbumCreate />
+            <div className="row">
             { this.state.albums.map( function (album, index){
                 return (<div className="col-2" key={index}>
                     <Link to={`/albums/${album.id}`}>
@@ -20,7 +23,8 @@ class Albums extends Component {
                     </Link>
             </div>)
             } )}
-        </div> );
+        </div> 
+        </>);
     }
 }
  
