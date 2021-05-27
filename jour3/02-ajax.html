@@ -1,0 +1,63 @@
+React librairie qui permet de créer des UI à base de composant 
+
+sa mission => gérer ce qui est afficher dans la navigateur de l'internaute
+
+pas du tout son rôle de stocker des données 
+par contre rôle demande des données => appeler API 
+
+Application Program Interface : regle / logiciel / langage / librairie qui permet de faire communiquer deux parties d'une programme 
+
+React  <==   API   ==> Serveur stocker des données et CRUD 
+
+Base de Données 4 actions de Bases 
+Ajouter de nouveaux enregistrement dans la base de données Create 
+Récupérer une ou plusieurs lignes dans la base de données pour les afficher 
+                                                            Read 
+Modifier une information qui est enregistrée dans la base de données 
+                                                            Update
+Supprimer une ligne dans la base de données                 Delete 
+
+CRUD : Create Read Update Delete 
+
+Create POST 
+Read GET
+Update PUT
+Delete Delete 
+
+React  <==   API   ==> Serveur
+
+Demande => page d'accueil => demande au serveur récupérer tous les articles qui sont dans la base de données 
+
+WebService / API Restfull 
+
+status 200  => OK j'ai réussi à réaliser ce que tu m'as demandé 
+status 404 => j'ai bien reçu la demande MAIS je ne trouve pas la ressource 
+status 500  => j'ai bien reçu la demande MAIS il ya une erreur critique dans le code à exécuter 
+
+https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP
+
+
+AJAX requête HTTP GET / POST / PUT / DELETE 
+
+AJAX => fetch()
+     => jquery $.ajax()
+     => axios => requête HTTP GET / POST / PUT / DELETE en AJAX 
+
+----- 
+
+site internet met à disposition des données factice pour expériment 
+
+https://jsonplaceholder.typicode.com/
+
+https://jsonplaceholder.typicode.com/posts => tous les enregistrements de la table posts 
+https://jsonplaceholder.typicode.com/posts/3  => l'enregistrement id = 3 dans la table posts
+
+yarn add axios
+
+axios@0.21.1
+
+composant Home 
+https://jsonplaceholder.typicode.com/posts => json => stocker dans le state => map => afficher dans le composant 
+
+
+GET 
