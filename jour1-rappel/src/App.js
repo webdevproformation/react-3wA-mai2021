@@ -12,6 +12,8 @@ import CGV from "./jour2/Cgv";
 import MentionLegale from "./jour2/Mention-legale";
 import Connexion from './jour2/Connexion';
 import NotFound from './jour2/Not-found';
+import {Article} from './jour3/Article';
+
 
 import { Route , Switch , Redirect } from "react-router-dom";
 
@@ -34,6 +36,7 @@ function App() {
               <Route path="/not-found" component={NotFound}/>
               <Route path="/cgv" component={CGV}/>
               <Route path="/login" component={Connexion}/>
+              <Route path="/article/:nom" component={Article}/>
               <Route path="/" exact component={Home} />
               <Redirect to="/not-found" />
             </Switch>
