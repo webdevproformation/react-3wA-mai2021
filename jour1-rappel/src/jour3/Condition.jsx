@@ -1,9 +1,14 @@
 import React from 'react';
 
 class Condition extends React.Component {
-    state = { 
-        liste1 : ["Lundi","Mardi","Mercredi"]
+
+    constructor(){
+        super();
+        this.state = { 
+            liste1 : ["Lundi","Mardi","Mercredi"]
+        }
     }
+    
     render() { 
         return ( <>
             <h1>Autre manière de faire des conditions dans un composant</h1>
