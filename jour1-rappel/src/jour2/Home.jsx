@@ -19,7 +19,7 @@ class Home extends Component {
          this.setState({
             articles : data
          });
-    }
+    }// rdv 14h10 bon appétit !!!!!!!!!!!!!!!
     render() { 
         return ( <>
             <ol>

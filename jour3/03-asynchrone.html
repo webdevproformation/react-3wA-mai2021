@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // exemple de programme synchrone
+
+        const a = "bonjour";
+        console.log(a);
+        const b = "hello";
+        console.log(b);
+
+        // chaque instruction est exécutée à 100% avant de passer à l'instruction suivante => DANS l'ordre dans lequel le code a été écrit 
+
+        // code Asynchrone 
+
+        console.log("etape 1");
+        setTimeout( () => { 
+            console.log("etape 2");
+        }, 1000);
+        console.log("etape 3"); // la ligne est exécuter TOUT de suite SANS attendre que le setTimeout soit exécuté
+        // sans conséquences
+        
+        // avec conséquences
+        let listeArticle = [] ;
+        setTimeout ( () => {
+            listeArticle = ["a", "b"];
+        } , 2000);
+        console.log(listeArticle); // attendre que le setTimout soit exécuté pour exécuter le console.log()
+
+        // plusieurs manières de gérer ce cas de figure 
+
+        // callback 
+
+        let listeProduit = [];
+
+        getArticles( ( valeur )=> {
+            console.log(valeur)
+        } ); // appel de la fonction asychrone définir comme paramètre donne une fonction qui devra être exécutée lorsque le setTimeout est exécuté  
+
+        function getArticles ( callback  ){
+            setTimeout ( () => {
+                listeProduit = ["a", "b"];
+                callback( listeProduit )
+            } , 2000);
+        }
+
+        // Promise
+
+        // ES6 ajout 2 mots clés async await permet d'écrire de l'asynchrone dans une ordre naturel 
+
+        function animaux(){
+            return  new Promise(function(resolve, reject){
+                setTimeout( () => {
+                    resolve(listeAnimaux = ["chien", "chat", "renard"])
+                }, 3000);
+            });
+        }
+
+        async function getAnimaux (){
+            let listeAnimaux = [];
+            listeAnimaux = await animaux();
+            console.log( listeAnimaux );
+        }
+        getAnimaux ();
+        
+
+
+
+        
+
+
+
+
+    </script>
+</body>
+</html>
