@@ -1,13 +1,13 @@
 import { Component } from 'react';
-import axios from "axios";
+import { getAll } from "../services/Posts";
 
 class Albums extends Component {
     state = { 
         albums : []
-     }
+    }
     componentDidMount = async () => {
-       let albums = await axios.get( "https://jsonplaceholder.typicode.com/photos" );
-       let top100Albums = albums.data.filter( (album) => { return parseInt(album.id) <= 100 } );
+       let data = await getAll();
+       let top100Albums = data.filter( (album) => { return parseInt(album.id) <= 100 } );
        this.setState({ albums : top100Albums });
     }
     render() { 
