@@ -7,4 +7,9 @@ export async function getAll(){
     return data; 
 }
 
+export async function get(id){
+    let { data } = await axios.get( `https://jsonplaceholder.typicode.com/photos/${id}` );
+    return data; 
+}
+
 
