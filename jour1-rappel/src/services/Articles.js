@@ -1,9 +1,12 @@
 import axios from "axios";
+import { log } from "./log" ;
 
 const urlApiPosts = "https://jsonplaceholder.typicode.com/posts" ;
 
 export async function getAll(){
-    let {data} = await axios.get(`${urlApiPosts}`);
+    let reponse = await axios.get(`${urlApiPosts}`);
+    log(reponse) ;
+    let {data} = reponse
     // JSON
     //let info = axios.get("https://jsonplaceholder.typicode.com/posts"); // JSON
     // console.log(info) // return new Promise

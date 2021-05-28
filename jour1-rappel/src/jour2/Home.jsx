@@ -6,6 +6,7 @@ import Validation from '../jour3/Validation';*/
 import {getAll , suppr} from "../services/Articles";
 import {ToastContainer , toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
+import {log} from '../services/log';
 
 
 class Home extends Component {
@@ -24,6 +25,7 @@ class Home extends Component {
         //alert(id);
         // let o = {id : 10 , nom : "totot"};
         toast.error(`la suppression de l'article ${id} a bien été réalisée`);
+        log(`la suppression de l'article ${id} a bien été réalisée`);
         //toast.warning(JSON.stringify(o));
         // utiliser à la place des console.log()
         const cloneArticles = [...this.state.articles];
