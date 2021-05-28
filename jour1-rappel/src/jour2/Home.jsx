@@ -1,8 +1,9 @@
 import { Component } from 'react';
 /* import Condition from '../jour3/Condition';
 import Validation from '../jour3/Validation';*/
-import Formation from '../jour3/Formation'; 
-import axios from "axios" ; 
+// import Formation from '../jour3/Formation'; 
+/* import axios from "axios" ;  */
+import {getAll , suppr} from "../services/Articles";
 
 
 class Home extends Component {
@@ -10,23 +11,27 @@ class Home extends Component {
         articles : []
     }
     componentDidMount = async () => {
-        let {data} = await axios.get("https://jsonplaceholder.typicode.com/posts"); // JSON
-        //let info = axios.get("https://jsonplaceholder.typicode.com/posts"); // JSON
-        // console.log(info) // return new Promise
-        // demande => recevez l'information => latence lié au réseau 
-        // mettre un délai 0.5s 1s 4s 
-        // ATTEND la réponse avant de passer à la suite de l'exécution => programmation Asynchrone 
-        // lancer des instructions et certaines instructions vont être exécuter APRES l'autre 
-         console.log(data);
+        let data = await getAll() ;
          this.setState({
             articles : data
          });
-    }// rdv 14h10 bon appétit !!!!!!!!!!!!!!!
+    }
+
+    suppr = async (id) => {
+        await suppr(id);
+        //alert(id);
+        
+        const cloneArticles = [...this.state.articles];
+        this.setState({
+            articles : cloneArticles.filter(item =>  item.id !== id )
+        })
+    }
+
     render() { 
         return ( <>
-            <Formation />
+            {/* <Formation /> */}
             <ol>
-                {this.state.articles.map((article , index) =><li key={index}>{article.title}</li>)}
+                {this.state.articles.map((article , index) => <li key={index}>{article.title} <button className="btn btn-danger btn-sm my-1" onClick={() => this.suppr(article.id)}>supprimer</button></li> )}
             </ol>
             {/* <p>je suis le composant Home</p>
             <Condition />
