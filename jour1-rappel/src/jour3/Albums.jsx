@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { getAll , suppr , update } from "../services/Posts";
 import { Link } from 'react-router-dom';
 import AlbumCreate from './AlbumCreate';
+import {ToastContainer , toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 class Albums extends Component {
     state = { 
@@ -16,6 +18,7 @@ class Albums extends Component {
     modif = async(album) => {
         //console.log(album)
         await update( album );
+        toast.warn(`l'album numéro ${album.id} est bien modifié`)
     }
     suppr = async (id) => {
         console.log(id);
@@ -24,11 +27,13 @@ class Albums extends Component {
         /* console.log(cloneAlbum) */
         this.setState({
             albums :  cloneAlbum.filter( (item) => { return item.id !== id  })
-        }) 
+        });
+        toast.error(`l'album numéro ${id} est bien supprimé`);
         
     }
     render() { 
         return ( <>
+            <ToastContainer />
             <AlbumCreate />
             <div className="row">
             { this.state.albums.map( (album, index) => {
